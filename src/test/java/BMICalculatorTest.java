@@ -1,10 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class BMICalculatorTest {
     WebDriver driver;
@@ -22,7 +23,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Starvation");
+        assertEquals(category, "Your category is Starvation");
     }
     @Test
     public void categoryShouldBeStarvation2() {
@@ -31,7 +32,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Starvation");
+        assertEquals(category, "Your category is Starvation");
     }
 
     @Test
@@ -41,7 +42,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Underweight");
+        assertEquals(category, "Your category is Underweight");
     }
 
     @Test
@@ -51,7 +52,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Underweight");
+        assertEquals(category, "Your category is Underweight");
     }
 
     @Test
@@ -61,7 +62,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Normal");
+        assertEquals(category, "Your category is Normal");
     }
     @Test
     public void categoryShouldBeNormal2() {
@@ -70,7 +71,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Normal");
+        assertEquals(category, "Your category is Normal");
     }
 
     @Test
@@ -80,7 +81,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Overweight");
+        assertEquals(category, "Your category is Overweight");
     }
     @Test
     public void categoryShouldBeOverweight2() {
@@ -89,7 +90,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Overweight");
+        assertEquals(category, "Your category is Overweight");
     }
     @Test
     public void categoryShouldBeObese() {
@@ -98,7 +99,7 @@ public class BMICalculatorTest {
         driver.findElement(By.name("ht")).sendKeys("160");
         driver.findElement(By.cssSelector("[value=Calculate]")).click();
         String category = driver.findElement(By.name("desc")).getAttribute("value");
-        Assert.assertEquals(category, "Your category is Obese");
+        assertEquals(category, "Your category is Obese");
     }
 
     @AfterMethod(alwaysRun = true)
